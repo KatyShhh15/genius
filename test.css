@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.box1 {
+/* .box1 {
   display: inline;
   width: 100px;
   height: 100px;
@@ -45,4 +45,37 @@
 
 .box:last-child {
   background-color: gold;
+} */
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: burlywood;
+  padding: 10px;
+  border: 6px solid darkred;
+  margin: 10px;
+}
+
+/* .item:nth-child(3) {
+  flex-grow: 1;
+}*/
+
+.item:nth-child(3) {
+  flex-basis: 10%;
+  height: 80%;
+  flex-shrink: 0;
+  order: 2;
+}
+
+.item:nth-child(2) {
+  flex-basis: 50%;
+  height: 50%;
+  align-self: flex-end;
+  order: 1;
 }
