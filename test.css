@@ -1,8 +1,8 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 
-/* .box1 {
+.box1 {
   display: inline;
   width: 100px;
   height: 100px;
@@ -45,7 +45,7 @@
 
 .box:last-child {
   background-color: gold;
-} */
+}
 
 .flex-container {
   display: flex;
@@ -62,9 +62,9 @@
   margin: 10px;
 }
 
-/* .item:nth-child(3) {
+.item:nth-child(3) {
   flex-grow: 1;
-}*/
+}
 
 .item:nth-child(3) {
   flex-basis: 10%;
@@ -120,4 +120,146 @@
 .reasons::after {
   content: "♥";
   color: red;
+}
+
+.container {
+  padding: 30px;
+  border: 1px dotted black;
+}
+
+.parent {
+  position: relative;
+  padding: 20px;
+  border: 1px dotted black;
+}
+
+.item {
+  border-radius: 50%;
+}
+.item.red {
+  position: relative;
+  left: 50px;
+  top: 40px;
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  z-index: 3;
+  color: aliceblue;
+  overflow: hidden;
+}
+
+.item.green {
+  position: absolute;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  z-index: 1;
+}
+
+.item.blue {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  bottom: 100px;
+  right: 130px;
+  top: 40px;
+  left: 80px;
+}
+
+.item.yellow {
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+}
+
+.item.pink {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: pink;
+  top: 20px;
+  left: 30px;
+  z-index: 2;
+}
+
+.section-title {
+  position: sticky;
+  top: 20px;
+  background-color: blanchedalmond;
+} */
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  overflow: auto;
+}
+
+.parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.item.red {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  transform: translate(10px, 50px);
+}
+
+.item.green {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  animation-name: spin;
+  animation-duration: 2s;
+}
+
+.item.green:hover {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(90deg);
+    background-color: rgb(129, 129, 224);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    background-color: blue;
+  }
+}
+
+.item.blue {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  transform: scale(0.5);
+}
+
+.item.pink {
+  width: 150px;
+  height: 150px;
+  background-color: pink;
+  transform: skew(10deg, 15deg);
+}
+
+.item.pink:hover {
+  background-color: orange;
+  transition-property: background-color;
+  transition-duration: 2s;
+  transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
 }
